@@ -1,4 +1,4 @@
-package test.exeample;
+package test.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
