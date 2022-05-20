@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('Log Tool Versions') {
       steps {
+        tool(name: 'maven', type: 'MAVEN_HOME')
         sh '''
         	java -version
 			git --version
 			mvn -v
 		'''
-        tool(name: 'maven', type: 'MAVEN_HOME')
       }
     }
 
