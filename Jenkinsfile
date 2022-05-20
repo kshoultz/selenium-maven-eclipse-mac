@@ -15,5 +15,11 @@ mvn -v'''
       }
     }
 
+    stage('Test Maven') {
+      steps {
+        sh 'echo test'
+      }
+    }
+
   }
 }
