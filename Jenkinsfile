@@ -3,12 +3,10 @@ pipeline {
   stages {
     stage('error') {
       parallel {
-        stage('error') {
+        stage('Log Tool Versions') {
           steps {
             sh '''java -version
-
-git --version
-mvn -v'''
+git --version'''
           }
         }
 
