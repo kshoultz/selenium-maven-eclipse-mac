@@ -1,22 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
-      parallel {
-        stage('Log Tool Versions') {
-          steps {
-            sh '''java -version
+    stage('Log Tool Versions') {
+      steps {
+        sh '''java -version
 git --version
 mvn -v'''
-          }
-        }
+      }
+    }
 
-        stage('compile maven') {
-          steps {
-            sh 'mvn compile test package'
-          }
-        }
-
+    stage('Build Maven') {
+      steps {
+        sh 'mvn compile test package'
       }
     }
 
