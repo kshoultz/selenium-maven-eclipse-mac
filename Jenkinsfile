@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-  	maven '''MAVEN_HOME'''
+  	maven 3.8.5
   }
   stages {
     stage('Log Tool Versions') {
