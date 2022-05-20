@@ -22,4 +22,7 @@ mvn -v'''
     }
 
   }
+  environment {
+    maven = 'MAVEN_HOME'
+  }
 }
