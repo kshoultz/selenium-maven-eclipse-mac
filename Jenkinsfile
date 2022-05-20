@@ -8,6 +8,7 @@ pipeline {
 			git --version
 			mvn -v
 		'''
+        tool(name: 'maven', type: 'MAVEN_HOME')
       }
     }
 
