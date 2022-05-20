@@ -6,7 +6,7 @@ pipeline {
         stage('error') {
           steps {
             sh '''java -version
-mvn --version
+mvn -v
 git --version
 '''
           }
