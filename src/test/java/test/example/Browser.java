@@ -48,23 +48,23 @@ public class Browser {
         driver.get("https://google.com");
         String originalWindow = driver.getWindowHandle();
 
-        File scrGoogleFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File scrGoogleFile = (File) ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrGoogleFile, new File("./screenshots/googleImage.png"));
 
         WebElement element = driver.findElement(By.cssSelector(".lnXdpd"));
-        File scrElementFile = element.getScreenshotAs(OutputType.FILE);
+        File scrElementFile = (File) element.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrElementFile, new File("./screenshots/elementImage.png"));
 
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement button = driver.findElement(By.id("gbqfbb"));
-        js.executeScript("arguments[0].click();", button);
-        Thread.sleep(5000);
-        js.executeScript("console.log('hello world')");
-        Thread.sleep(10000);
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        WebElement button = driver.findElement(By.id("gbqfbb"));
+//        js.executeScript("arguments[0].click();", button);
+//        Thread.sleep(5000);
+//        js.executeScript("console.log('hello world')");
+//        Thread.sleep(10000);
 
         driver.navigate().to("https://automationstepbystep.com");
 
-        File scrStepByStepFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File scrStepByStepFile = (File) ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrStepByStepFile, new File("./screenshots/stepByStepImage.png"));
 
         System.out.println(driver.getCurrentUrl());

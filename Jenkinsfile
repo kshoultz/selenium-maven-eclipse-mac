@@ -1,11 +1,16 @@
 pipeline {
   agent any
+  tools {
+  	maven 'MAVEN_HOME'
+  }
   stages {
     stage('Log Tool Versions') {
       steps {
-        sh '''java -version
-git --version
-mvn -v'''
+        sh '''
+        	java -version
+			git --version
+			mvn -v
+		'''
       }
     }
 
